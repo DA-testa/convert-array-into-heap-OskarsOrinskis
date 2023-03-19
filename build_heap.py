@@ -55,7 +55,7 @@ def main():
 
     # calls function to assess the data 
     # and give back all swaps
-   swaps = build_heap(data)
+   swaps += build_heap(data[min_index])
 
 
     
