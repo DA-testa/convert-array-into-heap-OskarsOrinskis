@@ -39,9 +39,10 @@ def main():
 
     data = list(map(int, input().strip().split()))
 
-    if len(data) != n:
-        raise ValueError
+    
+    assert len(data) == n
 
+    build_heap(data)
 
     swaps = build_heap(data)
 
