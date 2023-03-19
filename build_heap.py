@@ -1,19 +1,12 @@
 # python3
 
-
-def build_heap(data):
-    swaps = []
-    # TODO: Creat heap and heap sort
-    # try to achieve  O(n) and not O(n2)
+def kk(data, i, swaps):
 
     n = len(data)
+    min_index = i
+    l = 2 * i + 1
 
-    for i in range(n // 2, -1, -1):
-
-        min_index = i
-        l = 2 * i + 1
-
-        if l < n and data[l] < data[min_index]:
+    if l < n and data[l] < data[min_index]:
             min_index = 1
         r = 2 * i + 2
 
@@ -23,15 +16,27 @@ def build_heap(data):
         if i != min_index:
             swaps.append((i, min_index))
             data[i], data[min_index] = data[min_index], data[i]
-            swaps += build_heap(data[min_index:])
+            kk(data, min_index, swaps)
 
+
+
+
+def build_heap(data):
+    swaps = []
+
+
+    n = len(data)
+
+    for i in range(n // 2, -1, -1):
+
+        kk(data, i, swaps)
+        
     return swaps
 
 
 def main():
     
-    input_str = input().strip()
-    input_str = input_str.replace('I', '').replace('F', '')
+    
     n = int(input_str)
 
     data = list(map(int, input().split()))
