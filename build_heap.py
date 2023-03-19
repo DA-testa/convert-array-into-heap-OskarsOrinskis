@@ -32,10 +32,16 @@ def main():
     
     input_str = input().strip()
     input_str = input_str.replace('I', '').replace('F', '')
-    n = int(input_str) if input_str else 0
+    n = int(input_str)
+
     data = list(map(int, input().split()))
-    assert len(data) == n
+
+    if len(data) != n:
+        raise ValueError
+
+
     swaps = build_heap(data)
+
     print(len(swaps))
     for i, j in swaps:
         print(i, j)
