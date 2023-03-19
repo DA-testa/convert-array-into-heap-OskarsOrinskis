@@ -8,17 +8,17 @@ def kk(data, n, i, swaps):
     r = 2 * i + 2
 
 
-    if l < n and data[l] < data[min_index]:
-        min_index = 1
+    if l < len(data) and data[l] < data[min_index]:
+        min_index = l
 
 
-    if r < n and data[r] < data[min_index]:
+    if r < len(data) and data[r] < data[min_index]:
         min_index = r
 
     if i != min_index:
         swaps.append((i, min_index))
         data[i], data[min_index] = data[min_index], data[i]
-        kk(data, n, min_index, swaps)
+        kk(data, min_index, swaps)
 
 
 
@@ -35,10 +35,9 @@ def main():
     n = int(input())
     data = list(map(int, input().split()))
     swaps = build_heap(data)
-    m = (len(swaps))
-    print(m)
-    for i, j in swaps:
-        print(i, j)
+    print(len(swaps))
+    for swap in swaps:
+        print(swaps[0], swap[1])
 
 
 if __name__ == "__main__":
