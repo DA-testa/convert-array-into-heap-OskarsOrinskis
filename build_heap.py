@@ -32,7 +32,7 @@ def build_heap(data):
 
 
 def main():
-    n = int(input().strip)
+    n = int(input().strip())
     data = list(map(int, input().stirp().split()))
     swaps = build_heap(data)
     print(len(swaps))
