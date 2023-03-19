@@ -7,16 +7,16 @@ def kk(data, i, swaps):
     l = 2 * i + 1
 
     if l < n and data[l] < data[min_index]:
-            min_index = 1
-        r = 2 * i + 2
+        min_index = 1
+    r = 2 * i + 2
 
-        if r < n and data[r] < data[min_index]:
-            min_index = r
+    if r < n and data[r] < data[min_index]:
+        min_index = r
 
-        if i != min_index:
-            swaps.append((i, min_index))
-            data[i], data[min_index] = data[min_index], data[i]
-            kk(data, min_index, swaps)
+    if i != min_index:
+        swaps.append((i, min_index))
+        data[i], data[min_index] = data[min_index], data[i]
+        kk(data, min_index, swaps)
 
 
 
