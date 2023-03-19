@@ -30,7 +30,7 @@ def build_heap(data):
 
             data[i], data[min_index] = data[min_index], data[i]
 
-            swaps += build_heap(data[min_index])
+            swaps += build_heap(data[min_index:])
 
     return swaps
 
@@ -41,10 +41,12 @@ def main():
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
 
-    n = input().strip().replace('I', '').replace('F', '')
+    input_str = input().strip()
+
+    input_str = input_str.replace('I', '').replace('F', '')
 
     # input from keyboard
-    n = int(n)
+    n = int(input_str)
     
     data = list(map(int, input().split()))
 
@@ -53,7 +55,7 @@ def main():
 
     # calls function to assess the data 
     # and give back all swaps
-    build_heap(data)
+   swaps = build_heap(data)
 
 
     
@@ -62,8 +64,9 @@ def main():
 
 
     # output all swaps
-    print_swaps
-    
+    print(len(swaps))
+    for i, j in swaps:
+        print(i, j)
 
 
 if __name__ == "__main__":
