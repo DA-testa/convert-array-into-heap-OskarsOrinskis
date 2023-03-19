@@ -2,7 +2,6 @@
 
 def kk(data, n, i, swaps):
 
-    n = len(data)
     min_index = i
     l = 2 * i + 1
 
@@ -19,7 +18,7 @@ def kk(data, n, i, swaps):
     if i != min_index:
         swaps.append((i, min_index))
         data[i], data[min_index] = data[min_index], data[i]
-        kk(data, min_index, swaps)
+        kk(data, n, min_index, swaps)
 
 
 
@@ -46,4 +45,5 @@ def main():
         print(i, j)
 
 
-
+if __name__ == "__main__":
+    main()
