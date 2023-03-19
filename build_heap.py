@@ -37,7 +37,7 @@ def build_heap(data):
 def main():
     
     
-    n = int(input())
+    n = int(input().strip())
 
     data = list(map(int, input().strip().split()))
 
