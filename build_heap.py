@@ -39,7 +39,7 @@ def main():
     
     n = int(input())
 
-    data = list(map(int, input().split()))
+    data = list(map(int, input().strip().split()))
 
     if len(data) != n:
         raise ValueError
