@@ -30,24 +30,12 @@ def build_heap(data):
 
 def main():
     
-
-
     input_str = input().strip()
-
     input_str = input_str.replace('I', '').replace('F', '')
-
-    n = int(input_str)
-    
+    n = int(input_str) if input_str else 0
     data = list(map(int, input().split()))
-
     assert len(data) == n
-
     swaps = build_heap(data)
-
-
-    
-    # this number should be less than 4n (less than 4*len(data))
-    # output all swaps
     print(len(swaps))
     for i, j in swaps:
         print(i, j)
