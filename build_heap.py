@@ -1,15 +1,17 @@
 # python3
 
-def kk(data, i, swaps):
+def kk(data, n, i, swaps):
 
     n = len(data)
     min_index = i
     l = 2 * i + 1
 
+    r = 2 * i + 2
+
+
     if l < n and data[l] < data[min_index]:
         min_index = 1
 
-    r = 2 * i + 2
 
     if r < n and data[r] < data[min_index]:
         min_index = r
@@ -27,16 +29,15 @@ def build_heap(data):
     n = len(data)
 
     for i in range(n // 2, -1, -1):
-        kk(data, i, swaps)
+        kk(data, n, i, swaps)
         
     return swaps
 
 
 def main():
-    n = int(input().strip())
-    data = list(map(int, input().strip().split()))
+    n = int(input())
+    data = list(map(int, input().split()))
     
-    assert len(data) == n
 
     swaps = build_heap(data)
 
