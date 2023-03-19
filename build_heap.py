@@ -24,23 +24,19 @@ def kk(data, n, i, swaps):
 
 
 def build_heap(data):
-    swaps = []
     n = len(data)
-
+    swaps = []
     for i in range(n // 2, -1, -1):
-        kk(data, n, i, swaps)
-        
+        kk(data, n, i, swaps)  
     return swaps
 
 
 def main():
     n = int(input())
     data = list(map(int, input().split()))
-    
-
     swaps = build_heap(data)
-
-    print(len(swaps))
+    m = (len(swaps))
+    print(m)
     for i, j in swaps:
         print(i, j)
 
