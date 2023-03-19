@@ -41,9 +41,11 @@ def main():
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
 
+    n = input().strip().replace('I', '').replace('F', '')
 
     # input from keyboard
-    n = int(input())
+    n = int(n)
+    
     data = list(map(int, input().split()))
 
     # checks if lenght of data is the same as the said lenght
@@ -51,8 +53,10 @@ def main():
 
     # calls function to assess the data 
     # and give back all swaps
-    swaps = build_heap(data)
+    build_heap(data)
 
+
+    
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
 
