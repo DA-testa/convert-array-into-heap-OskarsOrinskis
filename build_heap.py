@@ -8,6 +8,7 @@ def kk(data, i, swaps):
 
     if l < n and data[l] < data[min_index]:
         min_index = 1
+
     r = 2 * i + 2
 
     if r < n and data[r] < data[min_index]:
@@ -23,12 +24,9 @@ def kk(data, i, swaps):
 
 def build_heap(data):
     swaps = []
-
-
     n = len(data)
 
     for i in range(n // 2, -1, -1):
-
         kk(data, i, swaps)
         
     return swaps
@@ -36,13 +34,9 @@ def build_heap(data):
 
 def main():
     n = int(input().strip())
-
     data = list(map(int, input().strip().split()))
-
     
     assert len(data) == n
-
-    build_heap(data)
 
     swaps = build_heap(data)
 
