@@ -1,38 +1,63 @@
 # python3
-import heapq
-def build_heap(n, j, data):
-    treads = []
-    for i in range(n):
-        heapq.heappush(treads, (0, i))
+
+def kk(data, e, k, swaps):
+
+    root = ss
+    while(2 * root + 1) <= k:
+    l = 2 * i + 1
+
+    swap = root
+
+
+    if data[swap] > data[l]:
+        swap = l
+
+
+    if l+1 <= k and data[swap] > data[l+1]:
+        swap = l+1
+
+    if swap != root:
+        data[root], data[swap] = data[swap], data[root]
+        swaps.append((root, swap))
+        root = swap
+    else:
+        return
+
+
+
+
+def build_heap(data):
     swaps = []
 
-    for i in range(j):
-        data_time = data[i]
-        start_time, tread = heapq.heappop(treads)
-        swaps.append((tread, start_time))
-        heapq.heappush(treads, (start_time + data_time, tread))
+    n = len(data)
+
+    for n in range((n-2) // 2, -1, -1):
+        kk(data, e, n-1, swaps)
+    for k in range(n-1, 0, -1):
+        data[k], data[0] = data[0],  data[k]
+        swaps.append((k, 0))
+        kk(data, 0, k-1, swaps)  
     return swaps
-
-   
-
-
-
 
 
 def main():
-    try:
-        n, j = map(int, input().split())
+    text = input()
+    if text[0] == 'I':
+        n = int(input())
         data = list(map(int, input().split()))
-    except ValueError:
-        return 0
-    
-    x = build_heap(n, j, data)
-    total = x[-1][1]
-    print(total)
-    for i in range(len(x)):
-        print(x[i][0], x[i][1])
 
-    return total
+    elid text[0] == 'F':
+
+        with open(f"testes/{input()}", "r") as file:
+            
+
+            n = int(file.readline().strip())
+            data = list(map(int, file.readline().strip().split()))
+    swaps = build_heap(data)
+    print(len(swaps))
+    for i, j in swaps:
+        print(i, j)
+
 
 if __name__ == "__main__":
     main()
