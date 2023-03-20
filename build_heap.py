@@ -49,7 +49,7 @@ def main():
         n = int(input())
         data = list(map(int, input().split()))
 
-    elid text[0] == 'F':
+    elif text[0] == 'F':
 
         with open(f"tests/{input()}", "r") as file:
             
