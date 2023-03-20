@@ -24,7 +24,7 @@ def main():
         n, j = map(int, input().split())
         data = list(map(int, input().split()))
     except ValueError:
-        return
+        return 0
     
     x = build_heap(n, j, data)
     total = x[-1][1]
@@ -32,7 +32,7 @@ def main():
     for i in range(len(x)):
         print(x[i][0], x[i][1])
 
-    print(total)
+    return total
 
 if __name__ == "__main__":
     main()
