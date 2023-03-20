@@ -1,26 +1,28 @@
 # python3
-import heapq
-def build_heap(data, tread, n, j):
+import queue
+def build_heap(data, n, j):
 
-    n = len(tread)
-    j = len(data)
+    tread = queue.PriorityQueue()
 
-    tread.heap = [(t, i) for i, t in enumerate(tread)]
-    heapq.heap(tread_heap)
+    for i in range(n)
+
+        treads.put((0, i))
 
     swaps = []
 
-    if i in range(j):
+    for i in range(j):
+        
         data_time = data[i]
-
-        start_time, tread = heapq.heappop(tread_heap)
+    
+        start_time, tread = trads.get()
 
         swaps.append((tread, start_time))
-        
-        heapq.heappush(tread_heap, (sart_time + data_time, tread))
+
+        treads.put((sart_time + data_time, tread))
 
     return swaps
 
+   
 
 
 
@@ -28,12 +30,11 @@ def build_heap(data, tread, n, j):
 
 def main():
     n, j = map(int, input().split())
-    tread = [int(input()) for i in range(n)]
-    data = [int(input()) for i in range(j)]
-    x = build_heap(tread, data)
+    data = list(map(int, input().split()))
+    x = build_heap(n, j, data)
     
     for i in range(j):
-        print(x[i][0]+1, x[i][1])
+        print(x[i][0], x[i][1])
 
 
 if __name__ == "__main__":
