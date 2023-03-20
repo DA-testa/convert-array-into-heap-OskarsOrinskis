@@ -10,16 +10,16 @@ def kk(data, e, k, swaps):
 
 
         if data[swap] > data[l]:
-        swap = l
+            swap = l
 
 
         if l+1 <= k and data[swap] > data[l+1]:
-        swap = l+1
+            swap = l+1
 
         if swap != root:
-        data[root], data[swap] = data[swap], data[root]
-        swaps.append((root, swap))
-        root = swap
+            data[root], data[swap] = data[swap], data[root]
+            swaps.append((root, swap))
+            root = swap
 
         else:
             return
