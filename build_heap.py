@@ -1,5 +1,5 @@
 # python3
-import heao
+import heapq
 def build_heap(n, j, data):
     treads = []
     for i in range(n):
