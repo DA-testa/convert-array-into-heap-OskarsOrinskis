@@ -1,8 +1,8 @@
 # python3
 import queue
-def build_heap(data, n, j):
+def build_heap(n, j, data):
 
-    tread = queue.PriorityQueue()
+    treads = queue.PriorityQueue()
 
     for i in range(n):
 
@@ -14,7 +14,7 @@ def build_heap(data, n, j):
         
         data_time = data[i]
     
-        start_time, tread = trads.get()
+        start_time, tread = treads.get()
 
         swaps.append((tread, start_time))
 
