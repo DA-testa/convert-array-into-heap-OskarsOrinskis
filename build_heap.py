@@ -12,7 +12,7 @@ def build_heap(data, tread):
 
     if i in range(j):
         data_time = data[i]
-        
+
         start_time, tread = heapq.heappop(tread_heap)
 
         swaps.append((tread, start_time))
@@ -27,9 +27,8 @@ def build_heap(data, tread):
 
 
 def main():
-    n = int(input())
+    n, j= map(int, input().split())
     tread = [int(input()) for i in range(n)]
-    j = int(input())
     data = [int(input()) for i in range(j)]
     x = build_heap(tread, data)
     
