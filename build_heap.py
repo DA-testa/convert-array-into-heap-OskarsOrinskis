@@ -4,7 +4,7 @@ def build_heap(data, n, j):
 
     tread = queue.PriorityQueue()
 
-    for i in range(n)
+    for i in range(n):
 
         treads.put((0, i))
 
