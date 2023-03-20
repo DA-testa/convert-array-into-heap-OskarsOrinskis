@@ -23,7 +23,7 @@ def main():
     try:
         n, j = map(int, input().split())
         data = list(map(int, input().split()))
-    except ValueErorr:
+    except ValueError:
         return
     
     x = build_heap(n, j, data)
