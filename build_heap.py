@@ -50,10 +50,7 @@ def main():
         data = list(map(int, input().split()))
 
     elif text[0] == 'F':
-
         with open(f"tests/{input()}", "r") as file:
-            
-
             n = int(file.readline().strip())
             data = list(map(int, file.readline().strip().split()))
     swaps = build_heap(data)
