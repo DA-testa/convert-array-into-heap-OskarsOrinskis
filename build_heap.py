@@ -10,7 +10,7 @@ def build_heap(n, j, data):
         data_time = data[i]
         start_time, tread = heapq.heappop(treads)
         swaps.append((tread, start_time))
-        heapq.heappush(treads, (sart_time + data_time, tread))
+        heapq.heappush(treads, (start_time + data_time, tread))
     return swaps
 
    
