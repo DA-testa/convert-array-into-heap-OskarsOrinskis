@@ -29,7 +29,10 @@ def build_heap(data, n, j):
 
 
 def main():
-    n, j = map(int, input().split())
+    try:
+        n, j = map(int, input().split())
+    except ValueErorr:
+        return
     data = list(map(int, input().split()))
     x = build_heap(n, j, data)
     
