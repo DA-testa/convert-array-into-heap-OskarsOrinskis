@@ -32,6 +32,7 @@ def main():
     for i in range(len(x)):
         print(x[i][0], x[i][1])
 
+    print(total)
 
 if __name__ == "__main__":
     main()
