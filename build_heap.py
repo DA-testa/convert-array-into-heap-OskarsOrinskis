@@ -4,24 +4,25 @@ def kk(data, e, k, swaps):
 
     root = ss
     while(2 * root + 1) <= k:
-    l = 2 * i + 1
+        l = 2 * i + 1
 
-    swap = root
+        swap = root
 
 
-    if data[swap] > data[l]:
+        if data[swap] > data[l]:
         swap = l
 
 
-    if l+1 <= k and data[swap] > data[l+1]:
+        if l+1 <= k and data[swap] > data[l+1]:
         swap = l+1
 
-    if swap != root:
+        if swap != root:
         data[root], data[swap] = data[swap], data[root]
         swaps.append((root, swap))
         root = swap
-    else:
-        return
+
+        else:
+            return
 
 
 
@@ -33,10 +34,12 @@ def build_heap(data):
 
     for n in range((n-2) // 2, -1, -1):
         kk(data, e, n-1, swaps)
+
     for k in range(n-1, 0, -1):
         data[k], data[0] = data[0],  data[k]
         swaps.append((k, 0))
         kk(data, 0, k-1, swaps)  
+        
     return swaps
 
 
