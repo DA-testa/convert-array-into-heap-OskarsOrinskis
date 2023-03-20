@@ -4,7 +4,7 @@ def kk(data, root, k, swaps):
 
     
     while(2 * root + 1) <= k:
-        l = 2 * i + 1
+        l = 2 * root + 1
 
         swap = root
 
