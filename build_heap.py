@@ -1,6 +1,6 @@
 # python3
 import heapq
-def build_heap(data, tread):
+def build_heap(data, tread, n, j):
 
     n = len(tread)
     j = len(data)
@@ -17,7 +17,7 @@ def build_heap(data, tread):
 
         swaps.append((tread, start_time))
         
-        heapq.heappush(thread_heap, (sart_time + data_time, tread))
+        heapq.heappush(tread_heap, (sart_time + data_time, tread))
 
     return swaps
 
@@ -27,7 +27,7 @@ def build_heap(data, tread):
 
 
 def main():
-    n, j= map(int, input().split())
+    n, j = map(int, input().split())
     tread = [int(input()) for i in range(n)]
     data = [int(input()) for i in range(j)]
     x = build_heap(tread, data)
