@@ -1,43 +1,40 @@
 # python3
+import heapq
+def build_heap(data, tread):
 
-def kk(data, n, i, swaps):
+    n = len(tread)
+    j = len(data)
 
-    min_index = i
-    l = 2 * i + 1
+    tread.heap = [(t, i) for i, t in enumerate(tread)]
+    heapq.heap(tread_heap)
 
-    r = 2 * i + 2
-
-
-    if l < n and data[l] < data[min_index]:
-        min_index = l
-
-
-    if r < n and data[r] < data[min_index]:
-        min_index = r
-
-    if i != min_index:
-        swaps.append((i, min_index))
-        data[i], data[min_index] = data[min_index], data[i]
-        kk(data, n, min_index, swaps)
-
-
-
-
-def build_heap(data):
-    n = len(data)
     swaps = []
-    for i in range(n // 2, -1, -1):
-        kk(data, n, i, swaps)  
+
+    if i in range(j):
+        data_time = data[i]
+        
+        start_time, tread = heapq.heappop(tread_heap)
+
+        swaps.append((tread, start_time))
+        
+        heapq.heappush(thread_heap, (sart_time + data_time, tread))
+
     return swaps
 
 
+
+
+
+
 def main():
-    n = int(input().strip())
-    data = list(map(int, input().stirp().split()))
-    swaps = build_heap(data)
-    print(len(swaps))
-    for swap in swaps:
-        print(swaps[0], swap[1])
+    n = int(input())
+    tread = [int(input()) for i in range(n)]
+    j = int(input())
+    data = [int(input()) for i in range(j)]
+    x = build_heap(tread, data)
+    
+    for i in range(j):
+        print(x[i][0]+1, x[i][1])
 
 
 if __name__ == "__main__":
