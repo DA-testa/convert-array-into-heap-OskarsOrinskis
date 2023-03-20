@@ -39,7 +39,7 @@ def build_heap(data):
         data[k], data[0] = data[0],  data[k]
         swaps.append((k, 0))
         kk(data, 0, k-1, swaps)  
-        
+
     return swaps
 
 
@@ -51,7 +51,7 @@ def main():
 
     elid text[0] == 'F':
 
-        with open(f"testes/{input()}", "r") as file:
+        with open(f"tests/{input()}", "r") as file:
             
 
             n = int(file.readline().strip())
