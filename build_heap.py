@@ -1,16 +1,16 @@
 # python3
-import queue
+import heao
 def build_heap(n, j, data):
-    treads = queue.PriorityQueue()
+    treads = []
     for i in range(n):
-        treads.put((0, i))
+        heapq.heappush(treads, (0, i))
     swaps = []
 
     for i in range(j):
         data_time = data[i]
-        start_time, tread = treads.get()
+        start_time, tread = heapq.heappop(treads)
         swaps.append((tread, start_time))
-        treads.put((sart_time + data_time, tread))
+        heapq.heappush(treads, (sart_time + data_time, tread))
     return swaps
 
    
