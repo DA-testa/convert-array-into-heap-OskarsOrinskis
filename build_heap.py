@@ -27,7 +27,9 @@ def main():
         return
     
     x = build_heap(n, j, data)
-    for i in range(j):
+    total = x[-1][1]
+    print(total)
+    for i in range(len(x)):
         print(x[i][0], x[i][1])
 
 
