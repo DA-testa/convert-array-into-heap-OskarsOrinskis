@@ -1,8 +1,8 @@
 # python3
 
-def kk(data, e, k, swaps):
+def kk(data, root, k, swaps):
 
-    root = ss
+    
     while(2 * root + 1) <= k:
         l = 2 * i + 1
 
@@ -32,8 +32,8 @@ def build_heap(data):
 
     n = len(data)
 
-    for n in range((n-2) // 2, -1, -1):
-        kk(data, e, n-1, swaps)
+    for i in range((n-2) // 2, -1, -1):
+        kk(data, i, n-1, swaps)
 
     for k in range(n-1, 0, -1):
         data[k], data[0] = data[0],  data[k]
